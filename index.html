@@ -1,0 +1,2070 @@
+<!DOCTYPE html>
+<html lang="tg">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="TFC — Tajik Fried Fish & Chicken. Меню, фармоиши онлайн ва интихоби филиал."
+    >
+
+    <meta
+        name="theme-color"
+        content="#e50914"
+    >
+
+    <title>TFC — Tajik Fried Fish & Chicken</title>
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="./style.css"
+    >
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     LOADING
+===================================================== -->
+
+<div
+    class="page-loader"
+    id="pageLoader"
+>
+    <div class="loader-logo">
+        TFC
+    </div>
+
+    <div class="loader-line">
+        <span></span>
+    </div>
+</div>
+
+
+<!-- =====================================================
+     TOAST
+===================================================== -->
+
+<div
+    class="toast-container"
+    id="toastContainer"
+    aria-live="polite"
+></div>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header
+    class="site-header"
+    id="siteHeader"
+>
+
+    <div class="container header-container">
+
+        <!-- LOGO -->
+
+        <a
+            href="#home"
+            class="logo"
+            aria-label="TFC"
+        >
+            <div class="logo-mark">
+                <span class="logo-chicken">♨</span>
+                <strong>TFC</strong>
+            </div>
+
+            <div class="logo-text">
+                <strong>TFC</strong>
+                <small>Tajik Fried Fish & Chicken</small>
+            </div>
+        </a>
+
+
+        <!-- DESKTOP NAV -->
+
+        <nav
+            class="desktop-nav"
+            aria-label="Main navigation"
+        >
+            <a
+                href="#home"
+                class="nav-link active"
+                data-i18n="navHome"
+            >
+                Асосӣ
+            </a>
+
+            <a
+                href="#menu"
+                class="nav-link"
+                data-i18n="navMenu"
+            >
+                Меню
+            </a>
+
+            <a
+                href="#promotions"
+                class="nav-link"
+                data-i18n="navPromotions"
+            >
+                Аксияҳо
+            </a>
+
+            <a
+                href="#about"
+                class="nav-link"
+                data-i18n="navAbout"
+            >
+                Дар бораи мо
+            </a>
+
+            <a
+                href="#branches"
+                class="nav-link"
+                data-i18n="navBranches"
+            >
+                Филиалҳо
+            </a>
+
+            <a
+                href="#contact"
+                class="nav-link"
+                data-i18n="navContact"
+            >
+                Тамос
+            </a>
+        </nav>
+
+
+        <!-- HEADER ACTIONS -->
+
+        <div class="header-actions">
+
+            <!-- LANGUAGE -->
+
+            <div
+                class="language-switcher"
+                id="languageSwitcher"
+                aria-label="Language"
+            >
+                <button
+                    type="button"
+                    class="language-btn active"
+                    id="langTgBtn"
+                    data-lang="tg"
+                >
+                    TG
+                </button>
+
+                <span class="language-divider">|</span>
+
+                <button
+                    type="button"
+                    class="language-btn"
+                    id="langRuBtn"
+                    data-lang="ru"
+                >
+                    RU
+                </button>
+            </div>
+
+
+            <!-- SEARCH -->
+
+            <button
+                type="button"
+                class="header-icon-btn"
+                id="openSearchBtn"
+                aria-label="Ҷустуҷӯ"
+                data-i18n-aria="search"
+            >
+                <span>⌕</span>
+            </button>
+
+
+            <!-- CART -->
+
+            <button
+                type="button"
+                class="cart-button"
+                id="openCartBtn"
+                aria-label="Кушодани сабад"
+                data-i18n-aria="openCart"
+            >
+                <span class="cart-icon">
+                    🛒
+                </span>
+
+                <span
+                    class="cart-label"
+                    data-i18n="cart"
+                >
+                    Сабад
+                </span>
+
+                <span
+                    class="cart-count"
+                    id="cartCount"
+                >
+                    0
+                </span>
+            </button>
+
+
+            <!-- MOBILE MENU -->
+
+            <button
+                type="button"
+                class="mobile-menu-btn"
+                id="mobileMenuBtn"
+                aria-label="Кушодани меню"
+                aria-expanded="false"
+                data-i18n-aria="openMenu"
+            >
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- MOBILE MENU -->
+
+    <div
+        class="mobile-menu"
+        id="mobileMenu"
+    >
+        <nav>
+
+            <a href="#home">
+                <span>🏠</span>
+                <span data-i18n="navHome">Асосӣ</span>
+            </a>
+
+            <a href="#menu">
+                <span>🍗</span>
+                <span data-i18n="navMenu">Меню</span>
+            </a>
+
+            <a href="#promotions">
+                <span>%</span>
+                <span data-i18n="navPromotions">Аксияҳо</span>
+            </a>
+
+            <a href="#about">
+                <span>ℹ️</span>
+                <span data-i18n="navAbout">Дар бораи мо</span>
+            </a>
+
+            <a href="#branches">
+                <span>📍</span>
+                <span data-i18n="navBranches">Филиалҳо</span>
+            </a>
+
+            <a href="#contact">
+                <span>☎</span>
+                <span data-i18n="navContact">Тамос</span>
+            </a>
+
+            <div class="mobile-language-switcher">
+
+                <button
+                    type="button"
+                    class="language-btn active"
+                    data-lang="tg"
+                >
+                    🇹🇯 TG
+                </button>
+
+                <button
+                    type="button"
+                    class="language-btn"
+                    data-lang="ru"
+                >
+                    🇷🇺 RU
+                </button>
+
+            </div>
+
+        </nav>
+    </div>
+
+</header>
+
+
+<!-- =====================================================
+     SEARCH OVERLAY
+===================================================== -->
+
+<div
+    class="search-overlay"
+    id="searchOverlay"
+>
+    <div class="search-overlay-content">
+
+        <button
+            type="button"
+            class="close-search"
+            id="closeSearchBtn"
+            aria-label="Пӯшидани ҷустуҷӯ"
+            data-i18n-aria="closeSearch"
+        >
+            ×
+        </button>
+
+
+        <div
+            class="search-title"
+            data-i18n="searchFood"
+        >
+            Ҷустуҷӯи хӯрок
+        </div>
+
+
+        <div class="global-search-box">
+
+            <span>⌕</span>
+
+            <input
+                type="search"
+                id="globalSearchInput"
+                placeholder="Масалан: мурғ, моҳӣ, бургер..."
+                data-i18n-placeholder="searchPlaceholder"
+                autocomplete="off"
+            >
+
+        </div>
+
+
+        <div
+            class="search-results"
+            id="globalSearchResults"
+        ></div>
+
+    </div>
+</div>
+
+
+<!-- =====================================================
+     MAIN
+===================================================== -->
+
+<main>
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section
+    class="hero"
+    id="home"
+>
+
+    <div class="hero-background"></div>
+
+    <div class="container hero-container">
+
+        <!-- HERO CONTENT -->
+
+        <div class="hero-content">
+
+            <div class="hero-badge">
+                🔥 TFC — Tajik Fried Fish & Chicken
+            </div>
+
+
+            <h1>
+                <span data-i18n="heroTitle">
+                    Таоми болаззат,
+                </span>
+
+                <span data-i18n="heroTitleAccent">
+                    ки боз мехоҳед!
+                </span>
+            </h1>
+
+
+            <p
+                class="hero-description"
+                data-i18n="heroDescription"
+            >
+                Мурғи болаззат, моҳии хуштаъм ва хӯрокҳои дӯстдоштаи шумо —
+                бо фармоиши осон ва зуд.
+            </p>
+
+
+            <div class="hero-actions">
+
+                <a
+                    href="#menu"
+                    class="btn btn-primary"
+                >
+                    🍴
+                    <span data-i18n="viewMenu">
+                        Менюро дидан
+                    </span>
+                </a>
+
+                <button
+                    type="button"
+                    class="btn btn-dark"
+                    id="heroOrderBtn"
+                >
+                    🛒
+                    <span data-i18n="orderNow">
+                        Фармоиш додан
+                    </span>
+                </button>
+
+            </div>
+
+
+            <div class="hero-features">
+
+                <div class="hero-feature">
+
+                    <span>⚡</span>
+
+                    <div>
+                        <strong data-i18n="easyOrder">
+                            Фармоиши осон
+                        </strong>
+
+                        <small data-i18n="fewSteps">
+                            Дар чанд қадам
+                        </small>
+                    </div>
+
+                </div>
+
+
+                <div class="hero-feature">
+
+                    <span>📱</span>
+
+                    <div>
+                        <strong data-i18n="forPhone">
+                            Барои телефон
+                        </strong>
+
+                        <small>
+                            Android & iPhone
+                        </small>
+                    </div>
+
+                </div>
+
+
+                <div class="hero-feature">
+
+                    <span>📍</span>
+
+                    <div>
+                        <strong data-i18n="twoBranches">
+                            2 филиал
+                        </strong>
+
+                        <small data-i18n="chooseNearest">
+                            Филиали наздикро интихоб кунед
+                        </small>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- HERO IMAGE -->
+
+        <div class="hero-visual">
+
+            <div class="hero-circle"></div>
+
+            <img
+                src="./images/hero.jpg"
+                alt="Хӯрокҳои TFC"
+                class="hero-image"
+                id="heroImage"
+                onerror="if(this.dataset.fallback){this.classList.add('is-missing');return;}this.dataset.fallback='1';this.src='./images/placeholder.jpg';"
+            >
+
+
+            <div class="floating-card floating-card-one">
+
+                <span>⭐</span>
+
+                <div>
+                    <strong data-i18n="deliciousFood">
+                        Таоми болаззат
+                    </strong>
+
+                    <small data-i18n="everyDay">
+                        Ҳар рӯз
+                    </small>
+                </div>
+
+            </div>
+
+
+            <div class="floating-card floating-card-two">
+
+                <span>🛵</span>
+
+                <div>
+                    <strong data-i18n="onlineOrder">
+                        Фармоиши онлайн
+                    </strong>
+
+                    <small data-i18n="fastEasy">
+                        Зуд ва осон
+                    </small>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="hero-bottom">
+
+        <div class="container hero-bottom-grid">
+
+            <div>
+                <span>🛵</span>
+                <strong data-i18n="onlineOrder">
+                    Фармоиши онлайн
+                </strong>
+            </div>
+
+            <div>
+                <span>📍</span>
+                <strong data-i18n="nearBranches">
+                    Филиалҳои наздик
+                </strong>
+            </div>
+
+            <div>
+                <span>🏷️</span>
+                <strong data-i18n="navPromotions">
+                    Аксияҳо
+                </strong>
+            </div>
+
+            <div>
+                <span>✓</span>
+                <strong data-i18n="qualityFood">
+                    Хӯроки босифат
+                </strong>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     BRANCHES
+===================================================== -->
+
+<section
+    class="branch-select-section"
+    id="branches"
+>
+
+    <div class="container">
+
+        <div class="section-heading centered">
+
+            <span class="section-tag">
+                📍
+                <span data-i18n="navBranches">
+                    Филиалҳо
+                </span>
+            </span>
+
+            <h2 data-i18n="chooseBranch">
+                Филиали худро интихоб кунед
+            </h2>
+
+            <p data-i18n="chooseBranchDescription">
+                Барои фармоиш филиали ба шумо мувофиқро интихоб намоед.
+            </p>
+
+        </div>
+
+
+        <div
+            class="branch-grid"
+            id="branchGrid"
+        >
+            <!-- JS -->
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     MENU
+===================================================== -->
+
+<section
+    class="menu-section"
+    id="menu"
+>
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div>
+
+                <span class="section-tag">
+                    🍗
+                    <span data-i18n="tfcMenu">
+                        Менюи TFC
+                    </span>
+                </span>
+
+                <h2 data-i18n="chooseFood">
+                    Хӯроки дӯстдоштаатонро интихоб кунед
+                </h2>
+
+                <p data-i18n="demoMenuNotice">
+                    Менюи Demo — нархҳо ва маҳсулот барои намоиш мебошанд.
+                </p>
+
+            </div>
+
+
+            <div class="menu-search">
+
+                <span>⌕</span>
+
+                <input
+                    type="search"
+                    id="menuSearch"
+                    placeholder="Ҷустуҷӯ..."
+                    data-i18n-placeholder="search"
+                    autocomplete="off"
+                >
+
+            </div>
+
+        </div>
+
+
+        <!-- CATEGORY -->
+
+        <div
+            class="categories"
+            id="categories"
+        >
+
+            <button
+                type="button"
+                class="category-btn active"
+                data-category="all"
+            >
+                <span data-i18n="categoryAll">
+                    Ҳама
+                </span>
+            </button>
+
+
+            <button
+                type="button"
+                class="category-btn"
+                data-category="chicken"
+            >
+                🍗
+                <span data-i18n="categoryChicken">
+                    Мурғ
+                </span>
+            </button>
+
+
+            <button
+                type="button"
+                class="category-btn"
+                data-category="fish"
+            >
+                🐟
+                <span data-i18n="categoryFish">
+                    Моҳӣ
+                </span>
+            </button>
+
+
+            <button
+                type="button"
+                class="category-btn"
+                data-category="burger"
+            >
+                🍔
+                <span data-i18n="categoryBurger">
+                    Бургер
+                </span>
+            </button>
+
+
+            <button
+                type="button"
+                class="category-btn"
+                data-category="combo"
+            >
+                🍟
+                <span data-i18n="categoryCombo">
+                    Комбо
+                </span>
+            </button>
+
+
+            <button
+                type="button"
+                class="category-btn"
+                data-category="drink"
+            >
+                🥤
+                <span data-i18n="categoryDrink">
+                    Нӯшокиҳо
+                </span>
+            </button>
+
+        </div>
+
+
+        <!-- PRODUCTS -->
+
+        <div
+            class="products-grid"
+            id="productsGrid"
+        >
+            <!-- PRODUCTS FROM JS -->
+        </div>
+
+
+        <!-- EMPTY -->
+
+        <div
+            class="empty-products"
+            id="emptyProducts"
+            hidden
+        >
+
+            <div>
+                🔎
+            </div>
+
+            <h3 data-i18n="productNotFound">
+                Маҳсулот ёфт нашуд
+            </h3>
+
+            <p data-i18n="searchAnother">
+                Номи дигарро ҷустуҷӯ кунед.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     PROMOTION
+===================================================== -->
+
+<section
+    class="promotion-section"
+    id="promotions"
+>
+
+    <div class="container">
+
+        <div class="promotion-card">
+
+            <div class="promotion-content">
+
+                <span class="promotion-label">
+                    🔥
+                    <span data-i18n="specialOffer">
+                        Пешниҳоди махсус
+                    </span>
+                </span>
+
+                <h2 data-i18n="tfcCombos">
+                    Комбоҳои TFC
+                </h2>
+
+                <p data-i18n="promotionDescription">
+                    Хӯрокҳои дӯстдоштаатонро якҷоя фармоиш диҳед.
+                    Ин қисми Demo мебошад ва аксияҳо баъдтар аз
+                    Admin Panel идора карда мешаванд.
+                </p>
+
+                <a
+                    href="#menu"
+                    class="btn btn-light"
+                >
+                    <span data-i18n="viewMenu">
+                        Менюро дидан
+                    </span>
+                    →
+                </a>
+
+            </div>
+
+
+            <div class="promotion-image-wrap">
+
+                <img
+                    src="./images/combo-1.jpg"
+                    alt="Комбои TFC"
+                    loading="lazy"
+                    onerror="if(this.dataset.fallback){this.classList.add('is-missing');return;}this.dataset.fallback='1';this.src='./images/placeholder.jpg';"
+                >
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     ABOUT
+===================================================== -->
+
+<section
+    class="about-section"
+    id="about"
+>
+
+    <div class="container about-grid">
+
+        <div class="about-image">
+
+            <img
+                src="./images/chicken-1.jpg"
+                alt="TFC Fried Chicken"
+                loading="lazy"
+                onerror="if(this.dataset.fallback){this.classList.add('is-missing');return;}this.dataset.fallback='1';this.src='./images/placeholder.jpg';"
+            >
+
+            <div class="about-image-badge">
+                <strong>TFC</strong>
+                <span>Tajik Fried Fish & Chicken</span>
+            </div>
+
+        </div>
+
+
+        <div class="about-content">
+
+            <span
+                class="section-tag"
+                data-i18n="aboutTfc"
+            >
+                Дар бораи TFC
+            </span>
+
+            <h2 data-i18n="deliciousEveryDay">
+                Таоми болаззат барои ҳар рӯз
+            </h2>
+
+            <p data-i18n="aboutDescription">
+                Ин вебсайт ҳамчун Demo-и системаи фармоиши онлайн
+                барои TFC сохта шудааст. Муштарӣ метавонад менюро
+                бинад, маҳсулотро ба сабад илова кунад, филиалро
+                интихоб намояд ва фармоиш диҳад.
+            </p>
+
+
+            <div class="about-list">
+
+                <div>
+                    <span>✓</span>
+
+                    <p>
+                        <strong data-i18n="onlineMenu">
+                            Менюи онлайн
+                        </strong>
+
+                        <small data-i18n="productsCategories">
+                            Маҳсулот ва категорияҳо
+                        </small>
+                    </p>
+                </div>
+
+
+                <div>
+                    <span>✓</span>
+
+                    <p>
+                        <strong data-i18n="orderCart">
+                            Сабади фармоиш
+                        </strong>
+
+                        <small data-i18n="automaticCalculation">
+                            Ҳисоби автоматии маблағ
+                        </small>
+                    </p>
+                </div>
+
+
+                <div>
+                    <span>✓</span>
+
+                    <p>
+                        <strong data-i18n="branchSelection">
+                            Интихоби филиал
+                        </strong>
+
+                        <small data-i18n="orderSelectedBranch">
+                            Фармоиш ба филиали интихобшуда
+                        </small>
+                    </p>
+                </div>
+
+
+                <div>
+                    <span>✓</span>
+
+                    <p>
+                        <strong>
+                            Admin Panel
+                        </strong>
+
+                        <small data-i18n="orderManagement">
+                            Идоракунии фармоишҳо
+                        </small>
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     ORDER TRACKING
+===================================================== -->
+
+<section class="tracking-section" id="tracking">
+
+    <div class="container">
+
+        <div class="tracking-card">
+
+            <div class="tracking-info">
+
+                <span class="section-tag">
+                    📦
+                    <span data-i18n="myOrder">
+                        Фармоиши ман
+                    </span>
+                </span>
+
+                <h2 data-i18n="trackOrderTitle">
+                    Ҳолати фармоишро бинед
+                </h2>
+
+                <p data-i18n="enterOrderNumber">
+                    Рақами фармоишро ворид кунед.
+                </p>
+
+            </div>
+
+
+            <div class="tracking-form">
+
+                <div class="tracking-input-wrap">
+
+                    <input
+                        type="text"
+                        id="trackingInput"
+                        placeholder="Масалан: TFC-2026-0001"
+                        data-i18n-placeholder="trackingPlaceholder"
+                    >
+
+                    <button
+                        type="button"
+                        id="trackOrderBtn"
+                        data-i18n="check"
+                    >
+                        Санҷидан
+                    </button>
+
+                </div>
+
+
+                <div
+                    class="tracking-result"
+                    id="trackingResult"
+                ></div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     CONTACT
+===================================================== -->
+
+<section
+    class="contact-section"
+    id="contact"
+>
+
+    <div class="container">
+
+        <div class="section-heading centered">
+
+            <span class="section-tag">
+                ☎
+                <span data-i18n="navContact">
+                    Тамос
+                </span>
+            </span>
+
+            <h2 data-i18n="alwaysForYou">
+                Мо ҳамеша дар хизмати шумо
+            </h2>
+
+            <p data-i18n="contactDescription">
+                Барои маълумоти филиал аз рӯйхати филиалҳо истифода баред.
+            </p>
+
+        </div>
+
+
+        <div class="contact-grid">
+
+            <div class="contact-card">
+
+                <div class="contact-icon">
+                    📍
+                </div>
+
+                <h3 data-i18n="navBranches">
+                    Филиалҳо
+                </h3>
+
+                <p data-i18n="selectNearestBranch">
+                    Филиали наздикро интихоб кунед.
+                </p>
+
+                <a href="#branches">
+                    <span data-i18n="viewBranches">
+                        Дидани филиалҳо
+                    </span>
+                    →
+                </a>
+
+            </div>
+
+
+            <div class="contact-card">
+
+                <div class="contact-icon">
+                    🕐
+                </div>
+
+                <h3 data-i18n="workingHours">
+                    Соатҳои корӣ
+                </h3>
+
+                <p data-i18n="workingHoursDescription">
+                    Соатҳои корӣ барои ҳар филиал алоҳида нишон дода мешаванд.
+                </p>
+
+            </div>
+
+
+            <div class="contact-card">
+
+                <div class="contact-icon">
+                    🛒
+                </div>
+
+                <h3 data-i18n="onlineOrder">
+                    Фармоиши онлайн
+                </h3>
+
+                <p data-i18n="orderSteps">
+                    Меню → Сабад → Филиал → Фармоиш.
+                </p>
+
+                <a href="#menu">
+                    <span data-i18n="orderNow">
+                        Фармоиш додан
+                    </span>
+                    →
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+</main>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="site-footer">
+
+    <div class="container footer-grid">
+
+        <div class="footer-brand">
+
+            <a
+                href="#home"
+                class="footer-logo"
+            >
+                <strong>TFC</strong>
+                <span>Tajik Fried Fish & Chicken</span>
+            </a>
+
+            <p data-i18n="footerDescription">
+                Demo-и системаи фармоиши онлайн барои
+                ресторан ва филиалҳои TFC.
+            </p>
+
+
+            <div class="social-links">
+
+                <a
+                    href="#"
+                    aria-label="Instagram"
+                >
+                    IG
+                </a>
+
+                <a
+                    href="#"
+                    aria-label="Telegram"
+                >
+                    TG
+                </a>
+
+                <a
+                    href="#"
+                    aria-label="WhatsApp"
+                >
+                    WA
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h4 data-i18n="navMenu">
+                Меню
+            </h4>
+
+            <a
+                href="#home"
+                data-i18n="navHome"
+            >
+                Асосӣ
+            </a>
+
+            <a
+                href="#menu"
+                data-i18n="navMenu"
+            >
+                Меню
+            </a>
+
+            <a
+                href="#promotions"
+                data-i18n="navPromotions"
+            >
+                Аксияҳо
+            </a>
+
+            <a
+                href="#branches"
+                data-i18n="navBranches"
+            >
+                Филиалҳо
+            </a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h4 data-i18n="services">
+                Хизматрасонӣ
+            </h4>
+
+            <a
+                href="#menu"
+                data-i18n="onlineOrder"
+            >
+                Фармоиши онлайн
+            </a>
+
+            <a
+                href="#branches"
+                data-i18n="branchSelection"
+            >
+                Интихоби филиал
+            </a>
+
+            <a
+                href="#contact"
+                data-i18n="navContact"
+            >
+                Тамос
+            </a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h4>
+                Demo
+            </h4>
+
+            <p data-i18n="demoFooterNotice">
+                Маълумоти маҳсулот ва нархҳо барои намоиш мебошанд.
+            </p>
+
+            <a
+                href="./admin.html"
+                class="admin-demo-link"
+            >
+                Admin Panel →
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="container footer-bottom">
+
+        <p>
+            © <span id="currentYear"></span> TFC Demo
+        </p>
+
+        <p>
+            Demo version — Nurullo Coding
+        </p>
+
+    </div>
+
+</footer>
+
+
+<!-- =====================================================
+     CART OVERLAY
+===================================================== -->
+
+<div
+    class="drawer-overlay"
+    id="cartOverlay"
+></div>
+
+
+<!-- =====================================================
+     CART DRAWER
+===================================================== -->
+
+<aside
+    class="cart-drawer"
+    id="cartDrawer"
+    aria-label="Сабад"
+>
+
+    <div class="cart-header">
+
+        <div>
+
+            <span data-i18n="yourOrder">
+                Фармоиши шумо
+            </span>
+
+            <h2>
+                🛒
+                <span data-i18n="cart">
+                    Сабад
+                </span>
+            </h2>
+
+        </div>
+
+
+        <button
+            type="button"
+            class="close-drawer"
+            id="closeCartBtn"
+            aria-label="Пӯшидани сабад"
+            data-i18n-aria="closeCart"
+        >
+            ×
+        </button>
+
+    </div>
+
+
+    <div
+        class="cart-items"
+        id="cartItems"
+    >
+        <!-- JS -->
+    </div>
+
+
+    <div
+        class="empty-cart"
+        id="emptyCart"
+    >
+
+        <div class="empty-cart-icon">
+            🛒
+        </div>
+
+        <h3 data-i18n="emptyCart">
+            Сабад холӣ аст
+        </h3>
+
+        <p data-i18n="chooseFoodFromMenu">
+            Аз меню хӯрок интихоб кунед.
+        </p>
+
+        <button
+            type="button"
+            class="btn btn-primary"
+            id="emptyCartMenuBtn"
+            data-i18n="viewMenu"
+        >
+            Менюро дидан
+        </button>
+
+    </div>
+
+
+    <div
+        class="cart-summary"
+        id="cartSummary"
+    >
+
+        <div class="summary-row">
+
+            <span data-i18n="products">
+                Маҳсулот:
+            </span>
+
+            <strong id="cartSubtotal">
+                0 сомонӣ
+            </strong>
+
+        </div>
+
+
+        <div class="summary-row">
+
+            <span data-i18n="delivery">
+                Расонидан:
+            </span>
+
+            <strong id="deliveryPrice">
+                10 сомонӣ
+            </strong>
+
+        </div>
+
+
+        <div class="summary-divider"></div>
+
+
+        <div class="summary-row total-row">
+
+            <span data-i18n="total">
+                Ҳамагӣ:
+            </span>
+
+            <strong id="cartTotal">
+                0 сомонӣ
+            </strong>
+
+        </div>
+
+
+        <button
+            type="button"
+            class="checkout-btn"
+            id="checkoutBtn"
+        >
+            <span data-i18n="checkout">
+                Ба расмият даровардани фармоиш
+            </span>
+            →
+        </button>
+
+    </div>
+
+</aside>
+
+
+<!-- =====================================================
+     CHECKOUT MODAL
+===================================================== -->
+
+<div
+    class="modal"
+    id="checkoutModal"
+    aria-hidden="true"
+>
+
+    <div
+        class="modal-backdrop"
+        data-close-modal="checkoutModal"
+    ></div>
+
+
+    <div class="modal-dialog checkout-dialog">
+
+        <div class="checkout-header modal-header">
+
+            <div>
+
+                <span class="modal-small-title">
+                    TFC
+                </span>
+
+                <h2 data-i18n="checkoutTitle">
+                    Расмиятдарории фармоиш
+                </h2>
+
+            </div>
+
+
+            <button
+                type="button"
+                class="modal-close checkout-close"
+                data-close-modal="checkoutModal"
+                aria-label="Пӯшидан"
+                data-i18n-aria="close"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+        <form
+            id="checkoutForm"
+            class="checkout-form"
+            novalidate
+        >
+
+            <div class="checkout-body">
+
+            <div class="form-grid">
+
+                <!-- NAME -->
+
+                <div class="form-group">
+
+                    <label for="customerName">
+                        <span data-i18n="yourName">
+                            Номи шумо
+                        </span>
+                        *
+                    </label>
+
+                    <input
+                        type="text"
+                        id="customerName"
+                        name="customerName"
+                        placeholder="Ном"
+                        data-i18n-placeholder="namePlaceholder"
+                        required
+                    >
+
+                    <small class="field-error"></small>
+
+                </div>
+
+
+                <!-- PHONE -->
+
+                <div class="form-group">
+
+                    <label for="customerPhone">
+                        <span data-i18n="phoneNumber">
+                            Рақами телефон
+                        </span>
+                        *
+                    </label>
+
+                    <input
+                        type="tel"
+                        id="customerPhone"
+                        name="customerPhone"
+                        placeholder="+992 XX XXX XX XX"
+                        required
+                    >
+
+                    <small class="field-error"></small>
+
+                </div>
+
+
+                <!-- BRANCH -->
+
+                <div class="form-group">
+
+                    <label for="checkoutBranch">
+                        <span data-i18n="branch">
+                            Филиал
+                        </span>
+                        *
+                    </label>
+
+                    <select
+                        id="checkoutBranch"
+                        name="branch"
+                        required
+                    >
+                        <option
+                            value=""
+                            data-i18n="selectBranch"
+                        >
+                            Филиалро интихоб кунед
+                        </option>
+                    </select>
+
+                    <small class="field-error"></small>
+
+                </div>
+
+
+                <!-- ADDRESS -->
+
+                <div class="form-group">
+
+                    <label for="customerAddress">
+                        <span data-i18n="address">
+                            Суроға
+                        </span>
+                        *
+                    </label>
+
+                    <input
+                        type="text"
+                        id="customerAddress"
+                        name="address"
+                        placeholder="Маҳалла, кӯча, хона..."
+                        data-i18n-placeholder="addressPlaceholder"
+                        required
+                    >
+
+                    <small class="field-error"></small>
+
+                </div>
+
+
+                <!-- COMMENT -->
+
+                <div class="form-group full-width">
+
+                    <label
+                        for="customerComment"
+                        data-i18n="comment"
+                    >
+                        Шарҳ
+                    </label>
+
+                    <textarea
+                        id="customerComment"
+                        name="comment"
+                        rows="3"
+                        placeholder="Масалан: бе пиёз..."
+                        data-i18n-placeholder="commentPlaceholder"
+                    ></textarea>
+
+                </div>
+
+            </div>
+
+
+            <!-- PAYMENT -->
+
+            <div class="checkout-block">
+
+                <h3 data-i18n="paymentMethod">
+                    Тарзи пардохт
+                </h3>
+
+
+                <div class="payment-options">
+
+                    <label class="payment-option">
+
+                        <input
+                            type="radio"
+                            name="payment"
+                            value="cash"
+                            checked
+                        >
+
+                        <span class="payment-card">
+
+                            <span class="payment-icon">
+                                💵
+                            </span>
+
+                            <span>
+
+                                <strong data-i18n="cash">
+                                    Нақдӣ
+                                </strong>
+
+                            </span>
+
+                        </span>
+
+                    </label>
+
+
+                    <label class="payment-option">
+
+                        <input
+                            type="radio"
+                            name="payment"
+                            value="card_on_delivery"
+                        >
+
+                        <span class="payment-card">
+
+                            <span class="payment-icon">
+                                💳
+                            </span>
+
+                            <span>
+
+                                <strong data-i18n="cardOnDelivery">
+                                    Корт ҳангоми қабул
+                                </strong>
+
+                            </span>
+
+                        </span>
+
+                    </label>
+
+                </div>
+
+            </div>
+
+
+            <!-- CHECKOUT TOTAL -->
+
+            <div class="checkout-total-box">
+
+                <div>
+
+                    <span data-i18n="products">
+                        Маҳсулот
+                    </span>
+
+                    <strong id="checkoutSubtotal">
+                        0 сомонӣ
+                    </strong>
+
+                </div>
+
+
+                <div>
+
+                    <span data-i18n="delivery">
+                        Расонидан
+                    </span>
+
+                    <strong id="checkoutDelivery">
+                        10 сомонӣ
+                    </strong>
+
+                </div>
+
+
+                <div class="checkout-grand-total">
+
+                    <span data-i18n="total">
+                        Ҳамагӣ
+                    </span>
+
+                    <strong id="checkoutTotal">
+                        0 сомонӣ
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="demo-payment-notice">
+
+                <span class="demo-notice-icon" aria-hidden="true">
+                    ℹ️
+                </span>
+
+                <span data-i18n="demoPaymentNotice">
+                    Ин Demo мебошад. Пардохти воқеии онлайн дар ин версия фаъол нест.
+                </span>
+
+            </div>
+
+            </div>
+
+
+            <div class="checkout-footer">
+
+                <button
+                    type="submit"
+                    class="place-order-btn"
+                    id="placeOrderBtn"
+                >
+                    <span data-i18n="placeOrder">
+                        Фармоиш додан
+                    </span>
+                    <span aria-hidden="true">→</span>
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     ORDER SUCCESS MODAL
+===================================================== -->
+
+<div
+    class="modal"
+    id="successModal"
+    aria-hidden="true"
+>
+
+    <div class="modal-backdrop"></div>
+
+
+    <div class="modal-dialog success-dialog">
+
+        <div class="success-icon">
+            ✓
+        </div>
+
+
+        <h2 data-i18n="orderAccepted">
+            Фармоиши шумо қабул шуд!
+        </h2>
+
+
+        <p data-i18n="thankYouOrder">
+            Ташаккур барои фармоиш.
+        </p>
+
+
+        <div class="success-order-info">
+
+            <div>
+
+                <span data-i18n="orderNumber">
+                    Рақами фармоиш
+                </span>
+
+                <strong id="successOrderId">
+                    -
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                <span data-i18n="branch">
+                    Филиал
+                </span>
+
+                <strong id="successBranch">
+                    -
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                <span data-i18n="amount">
+                    Маблағ
+                </span>
+
+                <strong id="successTotal">
+                    -
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                <span data-i18n="status">
+                    Ҳолат
+                </span>
+
+                <strong
+                    class="status-new"
+                    id="successOrderStatus"
+                    data-i18n="statusNew"
+                >
+                    Нав
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <div class="success-actions">
+
+            <button
+                type="button"
+                class="btn btn-primary success-close-btn"
+                id="successCloseBtn"
+                data-i18n="understood"
+            >
+                Фаҳмо
+            </button>
+
+            <button
+                type="button"
+                class="btn success-track-btn"
+                id="successTrackBtn"
+                data-i18n="trackThisOrder"
+            >
+                Пайгирии фармоиш
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     PRODUCT DETAILS MODAL
+===================================================== -->
+
+<div
+    class="modal"
+    id="productModal"
+    aria-hidden="true"
+>
+
+    <div
+        class="modal-backdrop"
+        data-close-modal="productModal"
+    ></div>
+
+
+    <div class="modal-dialog product-dialog">
+
+        <button
+            type="button"
+            class="modal-close product-modal-close"
+            data-close-modal="productModal"
+            aria-label="Пӯшидан"
+            data-i18n-aria="close"
+        >
+            ×
+        </button>
+
+
+        <div
+            id="productModalContent"
+            class="product-modal-content"
+        ></div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     MOBILE BOTTOM NAV
+===================================================== -->
+
+<nav
+    class="mobile-bottom-nav"
+    aria-label="Mobile navigation"
+>
+
+    <a
+        href="#home"
+        class="mobile-bottom-item active"
+    >
+        <span>⌂</span>
+
+        <small data-i18n="navHome">
+            Асосӣ
+        </small>
+    </a>
+
+
+    <a
+        href="#menu"
+        class="mobile-bottom-item"
+    >
+        <span>🍗</span>
+
+        <small data-i18n="navMenu">
+            Меню
+        </small>
+    </a>
+
+
+    <button
+        type="button"
+        class="mobile-cart-button"
+        id="mobileCartBtn"
+    >
+
+        <span class="mobile-cart-icon">
+            🛒
+        </span>
+
+        <span
+            class="mobile-cart-count"
+            id="mobileCartCount"
+        >
+            0
+        </span>
+
+        <small data-i18n="cart">
+            Сабад
+        </small>
+
+    </button>
+
+
+    <a
+        href="#branches"
+        class="mobile-bottom-item"
+    >
+        <span>📍</span>
+
+        <small data-i18n="branch">
+            Филиал
+        </small>
+    </a>
+
+
+    <a
+        href="#contact"
+        class="mobile-bottom-item"
+    >
+        <span>☎</span>
+
+        <small data-i18n="navContact">
+            Тамос
+        </small>
+    </a>
+
+</nav>
+
+
+<!-- =====================================================
+     SCROLL TOP
+===================================================== -->
+
+<button
+    type="button"
+    class="scroll-top"
+    id="scrollTopBtn"
+    aria-label="Ба боло"
+    data-i18n-aria="scrollTop"
+>
+    ↑
+</button>
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script src="./script.js"></script>
+
+
+</body>
+</html>
